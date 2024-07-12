@@ -1,23 +1,28 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import { FaPlus, FaMinus } from 'react-icons/fa';
 
-function Items({name , hours}) {
+function Items({ name, hours }) {
+  let [count, setCount] = useState(Number(hours));
 
-  let [count , setCount] = useState(Number(hours));
-  const increament = ()=>{
-      setCount((prev) => count = prev+1 );
-  }
-  const decreament = ()=>{
-    setCount((prev)=>count = prev-1);
-  } 
+  const increment = () => {
+    setCount(prev => prev + 1);
+  };
+  
+  const decrement = () => {
+    setCount(prev => prev - 1);
+  };
+
   return (
-    <>
-        <li className='flex gap-10'>
-            <div>{`${name} - ${count} Hours`}</div>
-            <button onClick={increament}>Add</button>
-            <button onClick={decreament}>Sub</button>
-        </li>
-    </>
-  )
+    <li className="flex gap-4 items-center">
+      <div className="flex-1">{`${name} - ${count} Hours`}</div>
+      <button onClick={increment} className="bg-green-500 text-white px-2 py-1 rounded-full">
+        <FaPlus />
+      </button>
+      <button onClick={decrement} className="bg-red-500 text-white px-2 py-1 rounded-full">
+        <FaMinus />
+      </button>
+    </li>
+  );
 }
 
-export default Items
+export default Items;

@@ -20,7 +20,7 @@ function App() {
   };
 
   return (
-    <div className="">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100">
       <Title />
       <Input onAddItems={generateData} />
       <ItemsList transferData={data} />

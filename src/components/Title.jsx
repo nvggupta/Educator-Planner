@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
 
 function Title() {
   return (
-    <div>Geekster Education Planner</div>
-  )
+    <div className="text-2xl font-bold mb-4">Geekster Education Planner</div>
+  );
 }
 
-export default Title
+export default Title;
